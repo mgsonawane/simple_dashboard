@@ -1,0 +1,56 @@
+<div class="my-wrapper">
+  <!--my-header menu start-->
+  <div class="my-header">
+      <div class="my-header-menu">
+          <div>
+             
+          </div>
+          <span class="title">Admin Dashboard</span> 
+          <ul>
+              
+              <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <span> <h3 style="color: white;">{{fname}}</h3></span>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item type="button" data-toggle="modal" (click)="viewprofile()" data-target="#myModal"> View profile</button>
+                    <button mat-menu-item type="button" data-toggle="modal" (click)="editprofile()" data-target="#myModal">Edit profile</button>
+                  <button mat-menu-item (click)="signout()" >
+                    <span>Logout</span>
+                  </button>
+                </mat-menu>
+          </ul>
+          
+      </div>
+  </div>
+  <!--my-header menu end-->
+  <!--sidebar start-->
+  <div class="sidebar" >
+      <div class="sidebar-menu">
+          <div class="centre">
+              <div class="dash">
+                    <button class="dash" (click)="home()" >  <h2>Dashboard</h2></button>
+              </div>
+              <hr class="light">
+              <div class="dash">
+                      <button class="dash1" *ngIf="!show_stock" (click)="list()">Stock > </button>
+                      <button class="dash1" *ngIf="show_stock" (click)="list()">Stock </button> 
+                     
+                      
+              </div>
+              <div>
+                  <div *ngIf="show_stock" class="sub-menu1">
+                    <div class="dash">
+                    <hr class="light">
+                    <button  class="sub-menu1 dash" (click)="fruits()"> Fruits </button>
+                    </div>
+                    <div class="dash">
+                    <hr class="light">
+                    <button class="sub-menu1 dash" (click)="books()"> Books </button>
+                    </div>
+                </div>
+          </div>
+              <hr class="light">
+          </div>
+      </div>
+  </div>
+</div>
